@@ -64,8 +64,20 @@ fix, ax = plt.subplots(nrows=2, figsize=(15, 12))
 
 exp_var_df['explained_var'].plot(kind='line', marker='o', ax=ax[0])
 exp_var_df['cum_explained_var'].plot(kind='line', marker='o', ax=ax[1])
+plt.show()
 
 
 
 pca_50 = PCA(n_components=50, whiten=True, svd_solver='auto',copy=False)
 pca_data = pca_50.fit_transform(X_t)
+print(pca_data.shape)
+
+
+#Saving data and model
+y = data['gender'].values
+np.savez('./data/data_pca_50_target', pca_data, y)
+
+
+#saving the model
+pca_dict = {'pca': pca_50, 'mean_face': mean_face}
+pickle.dump(pca_dict, open('model/pca_dict.pickle', 'wb'))
