@@ -29,7 +29,7 @@ print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
 
 model_svc = SVC(probability=True)
 
-param_grid = {'C':[0.5,1,10,30,50],
+param_grid = {'C':[0.5,1,10,20,30,40,50],
               'kernel':['rbf','poly'],
               'gamma':[0.1, 0.05,0.01,0.001,0.002,0.005],
               'coef0':[0,1]
