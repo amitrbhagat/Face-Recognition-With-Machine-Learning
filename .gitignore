@@ -2,3 +2,4 @@ facerecognition_flask/
 venv/
 2_Train_FaceRecognition_with_ML/data/
 2_Train_FaceRecognition_with_ML/crop_data/
+2_Train_FaceRecognition_with_ML/test_images/
