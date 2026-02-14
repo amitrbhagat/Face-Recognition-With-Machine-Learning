@@ -12,13 +12,15 @@ model_pca = pca_models['pca'] # PCA model
 mean_face_arr = pca_models['mean_face'] # Mean Face
 
 
-def faceRecognitionPipeline(filename,path=True):
+def faceRecognitionPipeline(filename, path=True):
     if path:
         # step-01: read image
         img = cv2.imread(filename) # BGR
     else:
         img = filename # array
     # step-02: convert into gray scale
+    if img is None:
+        raise ValueError(f"Image NOT loaded. Check path carefully: {filename}")
     gray =  cv2.cvtColor(img,cv2.COLOR_BGR2GRAY) 
     # step-03: crop the face (using haar cascase classifier)
     faces = haar.detectMultiScale(gray,1.5,5)

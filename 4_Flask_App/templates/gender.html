@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<!-- 12 -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br><br>
+            <!-- form : upload the image -->
+            <h3 class="display-8" >Gender Classification</h3>
+            <p>Upload an image (.jpg, .jpeg, .png), our model will 
+                detect face first and then predict gender based on face (Male or Female)
+            </p>
+            <!-- upload image form -->
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="file" class="form-control" name="image_name" required>
+                    <input type="submit" value="Upload & Predict" class="btn btn-outline-primary">
+
+                </div>
+            </form>
+
+        </div>
+        <div class="col-8">
+            <!-- report: prediction image, reporting (grayscale, eigen image and probability score) -->
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
